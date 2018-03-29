@@ -18,12 +18,12 @@ public class Jogo {
 		char resp = 'a';
 		System.out.println("==========================");
 		do {
-			int cartaJ = jog.nextInt(13);
-			int nipeJ = jog.nextInt(4);
+			int cartaJ = jog.nextInt(13); // Escolhe uma carta aleatória de 0 a 13
+			int nipeJ = jog.nextInt(4); // Escolhe um nipe aleatório de 0 a 3
 			if (cartas[cartaJ] == "A" || cartas[cartaJ] == "J" || cartas[cartaJ] == "Q" || cartas[cartaJ] == "K") {
-				valor = 10;
+				valor = 10; // Define o valor de 10 para A J Q K
 			}
-			if (cartas[cartaJ] == "2") {
+			if (cartas[cartaJ] == "2") { // Define o valor em int para cada escolha String do Array
 				valor = 2;
 			} else if (cartas[cartaJ] == "3") {
 				valor = 3;
@@ -42,8 +42,8 @@ public class Jogo {
 			} else if (cartas[cartaJ] == "10") {
 				valor = 10;
 			}
-			somaJ = somaJ + valor;
-			System.out.println(cartas[cartaJ] + nipes[nipeJ]);
+			somaJ = somaJ + valor; // Faz a soma dos valores selecionados
+			System.out.println(cartas[cartaJ] + nipes[nipeJ]); // Escreve o valor e o nipe
 			System.out.println("Soma: " + somaJ);
 			System.out.println();
 			if(somaJ>21) {
@@ -58,10 +58,10 @@ public class Jogo {
 				resp = 'N';
 			}
 			System.out.println();
-		} while (resp == 'S');
+		} while (resp == 'S'); // Cria um looping enquanto a resposta for S e a soma<21
 		
 		System.out.println("");
-		System.out.println("Cartas do computador");
+		System.out.println("Cartas do computador"); // Faz exatamente o mesmo proecesso para o computador
 		System.out.println("==========================");
 		int somaC=0;
 		do {
@@ -100,7 +100,7 @@ public class Jogo {
 		}while(somaC<17);
 		System.out.println("==========================");
 
-		if(somaJ<somaC) {
+		if(somaJ<somaC) { // Caso nenhum dos 2 tenham estourado, o que tiver a maior soma ganha
 			System.out.println("Computador ganhou o jogo!");
 		}else if(somaJ>somaC) {
 			System.out.println("Jogador ganhou o jogo!");
